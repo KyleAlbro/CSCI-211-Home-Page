@@ -4,8 +4,8 @@
    Tutorial Case
 
    Countdown Clock
-   Author: 
-   Date:   
+   Author: Kyle Albro
+   Date:   10/25/22
 
 */
 
