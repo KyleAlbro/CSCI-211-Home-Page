@@ -3,3 +3,22 @@
     color: white;
     font-size: 25px;
 }
+
+html{
+    background-color: rgb(42, 117, 172);
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+.aNav > ul > li > a{
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(255, 181, 172);
+}
+
