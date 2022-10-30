@@ -10,17 +10,16 @@
 
 */
 
-var thisTime = new Date();
-var thisStr = thisTime.toLocaleString();
-
-
+var thisTime = new Date("Feburary 3, 2018 3:15:28");
+var timeStr = thisTime.toLocaleString();
+    
 document.getElementById("timeStamp").innerHTML = timeStr;
 
 var thisHour = thisTime.getHours();
-var thisMonth = thisTime.getMonths();
+var thisMonth = thisTime.getMonth();    
 var mapNum = (2 * thisMonth + thisHour) % 24;
 
 var imgStr = "<img src='sd_sky" + mapNum + ".png' />";
 
 var temp = document.getElementById("planisphere");
-temp.instertAdjacentHTML('afterbegin', imgStr);
+temp.insertAdjacentHTML('afterbegin', imgStr);
