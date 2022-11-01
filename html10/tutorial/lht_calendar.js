@@ -5,8 +5,8 @@
    Tutorial 10
    Tutorial Case
 
-   Author: 
-   Date:  
+   Author: Kyle Albro
+   Date:  10/31/22
 
    Filename:   lht_calendar.js  
 
@@ -30,3 +30,38 @@
 	
 */
 
+var thisDay = new Date("August 24, 2018");
+
+document.getElementById("calendar").innerHTML = createCalendar(thisDay);
+
+function createCalendar(calDate) {
+   var calendarHTML = "<table id='calendar_table'>";
+   calendarHTML += calCaption(calDate);
+   calendarHTML += calWeekdayRow();
+   calendarHTML += "</table>";
+   return calendarHTML;
+}
+
+function calCaption(calDate) {
+   var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+   var thisMonth = calDate.getMonth();
+
+   var thisYear = calDate.getFullYear();
+
+   return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>"
+}
+
+
+//10.2 starts here
+function calWeekdayRow() {
+   var dayName = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+   var rowHTML = "<tr>";
+
+   for (var i = 0; i < dayName.length; i++) {
+      rowHTML += "<th class='calendar_weekdays'>" + dayName[i] + "</th>";
+   }
+
+   rowHTML += "</tr>";
+   return rowHTML;
+}
