@@ -7,6 +7,15 @@
     top: 15px;
 }
 
+.crumbB {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    position: fixed;
+    left: 10px;
+    top: 15px;
+}
+
 .myHTML{
     background-color: rgb(42, 117, 172);
     color: white;
