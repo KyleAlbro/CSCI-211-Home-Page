@@ -4,10 +4,7 @@
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 10
    Case Problem 2
-  
-     
-   Filename: hg_product.js  
-   
+   Filename: hg_product.js
    Variables:
    itemTitle contains the title of the game
    itemManufacturer specifies the game manufacturer
@@ -18,14 +15,11 @@
    itemCondition specifies the game condition
    itemRelease specifies the game's release date
    itemSummary provides the HTML code that summarizes the game
-   
    ratings is an array of customer ratings of the game on a 1 - 5 star range
    ratingTitles is an array of titles of the customer reviews
    ratingAuthors is an array of review authors
    ratingDates is an array of dates in which the reviews were submitted
    ratingSummaries is an array of the HTML code for each customer reviewref
-
-   
 */
 
 var itemTitle = "Dance Off VII";
@@ -36,7 +30,7 @@ var itemPlatform = "Nintendo, Playstation, Sony, Xbox";
 var itemESRB = "Everyone";
 var itemCondition = "New";
 var itemRelease = "Sept. 28, 2018";
-var itemSummary = 
+var itemSummary =
         "<h3>Challenge Yourself with Dance</h3> \
          <p><em>Dance Off VII</em>, the highly anticipated sequel in the Dance Off \
             line of dance games, brings even more fun and challenges to your gaming console. \
@@ -52,7 +46,7 @@ var itemSummary =
            international and stage your own Dance Off Olympics against friends from around \
            the globe. Dancers can track their stats and standings on global leader \
            boards.</p>";
-           
+
 var ratings = [5,2,1,5,3,5,5,4,5,3,4,2,5,4,5,4,4,5,5];
 var ratingTitles = ["My Favorite Workout Game","Poor Choreography","Buggy with Poor Tech Support",
                     "A Great Gift", "A Very Nice Upgrade",
@@ -82,10 +76,10 @@ var ratingSummaries = [
             Many of the moves follow predictable patterns. I hope the next release improves the choreography .</p>",
             "<p>The installation was buggy and kept crashing my gaming console. I spent several hours \
              on tech support with no solution to my problem. I finally returned it and got my money \
-             back. I wish I could give it a zero star rating.</p>",              
+             back. I wish I could give it a zero star rating.</p>",
             "<p>I bought this for my 13 year old daughter and her friends. They had exhausted the songs from the \
              earlier releases and looking for a new challenge. This release includes the most current songs with \
-             GREAT new moves.</p>",           
+             GREAT new moves.</p>",
             "<p>If you've played any of the previous Dance Off release then you know what to expect from this fun \
              game. New users: give it a try.  It's kind of goofy and a lot of fun and unlike other games, it's a \
              great source of exercise . It's not just for kids; sneak in some exercise when your children are away. \
@@ -156,5 +150,3 @@ var ratingSummaries = [
             "<p>I'm an exchange student here in the United States. I can't tell you how much I enjoyed the World \
             Stage feature of this game. It allows me to reconnect with my friends back home, who I greatly miss! \
             Now, on a Saturday night we can party and the miles don't seem quite as long. </p>"];
-
-
