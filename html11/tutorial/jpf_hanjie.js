@@ -5,8 +5,8 @@
    Tutorial 11
    Tutorial Case
 
-   Author: 
-   Date:   
+   Author: Kyle Albro
+   Date:   11/7/22
 
    Global Variables
    ================
@@ -53,11 +53,52 @@
       multi-dimensional array, puzzle.
 	
 */
+window.onload = init;
 
+var puzzleCells;
 
+function init(){
+   document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
 
+   document.getElementById("puzzle").innerHTML = 
+   drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
 
+   var puzzleButtons = document.getElementsByClassName("puzzles");
+   for (var  i= 0; i< puzzleButtons.length; i++){
+      puzzleButtons[i].onclick = swapPuzzle;
+   }
 
+   setupPuzzle();
+}
+
+function swapPuzzle(e){
+   var puzzleID = e.target.id;
+
+   var puzzleTitle = e.target.value;
+   document.getElementById("puzzleTitle").innerHTML = puzzleTitle;
+
+   switch (puzzleID) {
+      case "puzzle1":
+         document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint, puzzle1Rating, puzzle1);
+         break;
+      case "puzzle2":
+         document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle2Hint, puzzle2Rating, puzzle2);
+         break;
+      case "puzzle3":
+         document.getElementById("puzzle").innerHTML =drawPuzzle (puzzle3Hint, puzzle3Rating, puzzle3);
+         break;
+   }
+
+   setupPuzzle();
+}
+
+function setupPuzzle(){
+   puzzleCells =document.querySelectorAll("table#hanjieGrid td");
+
+   for (var i = 0; i < puzzleCells.length; i++){
+      puzzleCells[i].style.backgroundColor = "rgb(233, 207, 29)";
+   }
+}
 
          
 /* ================================================================= */
