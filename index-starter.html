@@ -48,12 +48,12 @@
 
        movieHTML = ``;
        for(var i = 0; i< movies.length; i++){
-
-         movieHTML += `${movies[i]} <br/> Released ${releaseYrs[i]} <br/> Rating: ${rating[i]}`;
+         movieHTML += `${movies[i]} <br/> Released ${releaseYrs[i]} 
+                    <br/> Rating: ${rating[i]}`;
          var idName = `mov-${i+1}`;
          document.getElementById(idName).innerHTML = movieHTML;
 
-         movieHtml = ``;
+         movieHTML = ``;
        }
        footerHTML = `Want to know more? Visit  
          <a href='https://www.javascripttutorial.net/es6/javascript-template-literals/#'>Template Literals</a>`;

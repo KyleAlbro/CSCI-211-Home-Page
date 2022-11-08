@@ -1,3 +1,20 @@
 html{
     font-family: 'Ariel', Courier, monospace;
 }
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+    border: 1px solid gray;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    display: inline-block;
+    text-align: center;
+}
+footer{
+    margin-top: 1.6em;
+    margin-left: 1.6em;
+}
