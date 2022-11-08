@@ -13,6 +13,10 @@ div {
     margin-right: 150px;
     display: inline-block;
     text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 footer{
     margin-top: 1.6em;
