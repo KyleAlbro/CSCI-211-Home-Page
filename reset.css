@@ -5,6 +5,7 @@
     position: fixed;
     left: 10px;
     top: 15px;
+    font-family: 'Times New Roman';
 }
 
 .crumbB {
@@ -14,6 +15,7 @@
     position: fixed;
     left: 10px;
     top: 15px;
+    font-family: 'Times New Roman'
 }
 
 .myHTML{
