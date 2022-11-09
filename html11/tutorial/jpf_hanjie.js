@@ -56,6 +56,7 @@
 window.onload = init;
 
 var puzzleCells;
+var cellBackground;
 
 function init(){
    document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
@@ -69,6 +70,8 @@ function init(){
    }
 
    setupPuzzle();
+
+   document.addEventListener("mouseup", endBackground);
 }
 
 function swapPuzzle(e){
@@ -97,10 +100,46 @@ function setupPuzzle(){
 
    for (var i = 0; i < puzzleCells.length; i++){
       puzzleCells[i].style.backgroundColor = "rgb(233, 207, 29)";
+      puzzleCells[i].onmousedown = setBackground;
+      puzzleCells[i].style.cursor = "url(jpf_pencil.png), pointer";
    }
 }
 
-         
+function setBackground(e){
+   var cursorType;
+   if (e.shiftKey) {
+      cellBackground = "rgb(233, 207, 29)";
+      cursorType = "url(jpf_eraser.png), cell";
+   }
+   else if (e.altKey){
+      cellBackground = "rgb(255, 255, 255)";
+      cursorType = "url(jpf_cross.png), crosshair";
+   }
+   else {
+      cellBackground = "rgb(101, 101, 101)";
+      cursorType = "url(jpf_pencil.png), pointer";
+   }
+   e.target.style.backgroundColor = cellBackground;
+
+   for(var i = 0; i < puzzleCells.length; i++){
+      puzzleCells[i].addEventListener("mouseenter", extendBackground);
+      puzzleCells[i].style.cursor = cursorType;
+   }
+
+   e.preventDefault();
+}
+
+function extendBackground(e){
+   e.target.style.backgroundColor = cellBackground;
+}
+
+function endBackground(){
+   for (var i = 0; i< puzzleCells.length; i++){
+      puzzleCells[i].removeEventListener("mouseenter", extendBackground);
+      puzzleCells[i].style.cursor = "url(jpf_pencil.png), pointer";
+   }
+}
+
 /* ================================================================= */
 
 function drawPuzzle(hint, rating, puzzle) {
