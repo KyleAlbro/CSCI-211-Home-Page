@@ -8,18 +8,18 @@ var heading = document.getElementById("header");
 
 heading.textContent = `${title}`;
 
-movieHTML = ``;
+weatherHTML = ``;
 for (var i = 0; i < days.length; i++) {
 
-    movieHTML += `${days[i]} <br/> 
+    weatherHTML += `${days[i]} <br/> 
     <img src="${days[i]}.png"></img> <br/>
     Temperature: ${temp[i]} <br/> 
     Feels Like: ${feelsLike[i]}`;
     
     var idName = `day-${i + 1}`;
-    document.getElementById(idName).innerHTML = movieHTML;
+    document.getElementById(idName).innerHTML = weatherHTML;
 
-    movieHTML = ``;
+    weatherHTML = ``;
 }
 footerHTML = `These are not my logos, visit   
          <a href='https://windy.app/support/weather-symbols-and-icons.html'>Weather Logos</a> too see all the logos available.`;
