@@ -1,5 +1,6 @@
 //default values
 var title = "Weather For This Week";
+var date = "October 31st, 2022"
 var days = ["Sunny", "Rain", "Snow"];
 var feelsLike = ["65-70", "32-41", "9"];
 var temp = ["60", "40", "20"];
@@ -16,8 +17,11 @@ var btWeather = ["Snow", "Rain", "Snow"];
 
 
 var heading = document.getElementById("header");
+var setDate = document.getElementById("date");
+
 
 heading.textContent = `${title}`;
+setDate.textContent = `${date}`;
 
 //for loop to print each day
 weatherHTML = ``;
