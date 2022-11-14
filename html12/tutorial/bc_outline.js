@@ -5,8 +5,8 @@
    Tutorial 12
    Tutorial Case
 
-   Author: 
-   Date:   
+   Author: Kyle Albro
+   Date:   11/14/22
 
    Filename: bc_outline.js
 
