@@ -27,3 +27,33 @@
 
 */
 
+window.addEventListener("load", makeOutline);
+
+function makeOutline(){
+   var outline = document.getElementById("outline");
+
+   var source = document.getElementById("doc");
+
+   var mainHeading = document.createElement("h1");
+   var outlineList = document.createElement("ol");
+   var headingText = document.createTextNode("Outline");
+
+   mainHeading.appendChild(headingText);
+   outline.appendChild(mainHeading);
+   outline.appendChild(outlineList);
+   createList(source, outlineList);
+}
+
+function createList(source, outlineList){
+   var headings = ["H1", "H2", "H3", "H4", "H5", "H6"];
+
+   for (var n = source.firstChild; n !== null; n = n.nextSibling){
+      var headLevel = headings.indexOf(n.nodeName);
+
+      if(headLevel !== -1){
+          var listElem = document.createElement("li");
+          listElem.innerHTML = n.firstChild.nodeValue;
+          outlineList.appendChild(listElem);
+      }
+   }
+}

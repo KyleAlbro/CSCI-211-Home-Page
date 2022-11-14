@@ -23,11 +23,11 @@
     color: white;
 }
 
-h1{
+.myH1{
     text-align: center;
 }
 
-ul{
+.myUl{
     list-style-type: none;
 }
 
