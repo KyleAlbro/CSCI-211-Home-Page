@@ -1,9 +1,16 @@
 html{
     font-family: 'Ariel', Courier, monospace;
+    
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(42, 117, 172);   
+}
+
+.dark-mode{
+    background-color: rgb(23, 78, 117);
+    color: white;
 }
 
 div[id^="day-"]{
