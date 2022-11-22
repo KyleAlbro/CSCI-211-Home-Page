@@ -34,6 +34,7 @@ var movie = {
 };
 // --- Using movie object
 document.getElementById("title").textContent = movie.title;
+
 var castElements = document.querySelectorAll(".cast");
 for(var i = 0; i < movie.cast.length; i++){
   castElements[i].textContent = movie.cast[i];
@@ -46,9 +47,6 @@ document.getElementById("review").textContent =
 `${movie.reviewer.revName} gives this movie a ${movie.reviewer.stars}
 stars and is his favorite ${movie.genre} movie. 
 It is rated ${movie.rating}.`;
-
-
-
 
 // ----
 var courses = {

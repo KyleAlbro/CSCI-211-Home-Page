@@ -6,7 +6,7 @@ var feelsLike = ["65-70", "32-41", "9", "31-33", "42-44"];
 var temp = ["60", "40", "20", "34", "45"];
 
 //different city weather
-var gfWeather = ["Sunny", "Snow", "Snow", "Rain", "Sunny" ];
+var gfWeather = ["Sunny", "Snow", "Snow", "Rain", "Sunny"];
 var bzWeather = ["Sunny", "Sunny", "Rain", "Rain", "Snow"];
 var btWeather = ["Snow", "Rain", "Snow", "Snow", "Snow"];
 
@@ -15,23 +15,21 @@ var gfFeels = ["65-70", "32-41", "9", "31-33", "42-44"];
 var bzFeels = ["55-73", "41-53", "34-36", "35-38", "29-31"];
 var btFeels = ["20-25", "30-36", "0", "12-15", "14"];
 
-
 //different city temps
 var gfTemp = ["60", "40", "20", "34", "45"];
 var btTemp = ["70", "42", "35", "39", "28"];
 var bzTemp = ["24", "30", "0", "14", "15"];
 
-
 var heading = document.getElementById("header");
 var setDate = document.getElementById("date");
-
 
 heading.textContent = `${title}`;
 setDate.textContent = `${date}`;
 
 window.addEventListener("load", setupStyles);
+
 function setupStyles() {
-dayNum = 5;
+    dayNum = 5;
 
     // this is your page styles
     var pageStyle = document.createElement("link");
@@ -113,7 +111,7 @@ dayNum = 5;
          }\
       }", 2);
 
-      //three day button
+    //three day button
     three.onclick = function () {
         dayNum = 3;
     }
@@ -121,6 +119,21 @@ dayNum = 5;
     //five day button
     five.onclick = function () {
         dayNum = 5;
+    }
+
+    //great falls weater is the default
+    weatherHTML = ``;
+    for (var i = 0; i < dayNum; i++) {
+
+        weatherHTML += `${gfWeather[i]} <br/> 
+          <img src="${gfWeather[i]}.png"></img> <br/>
+          Temperature: ${gfTemp[i]} <br/> 
+          Feels Like: ${gfFeels[i]}`;
+
+        var idName = `day-${i + 1}`;
+        document.getElementById(idName).innerHTML = weatherHTML;
+
+        weatherHTML = ``;
     }
 
     //great falls weather button
@@ -143,7 +156,7 @@ dayNum = 5;
     };
 
     //bozeman weather button
-    bzButton.onclick = function (){
+    bzButton.onclick = function () {
         weatherHTML = ``;
         for (var i = 0; i < 5; i++) {
 
@@ -179,8 +192,6 @@ dayNum = 5;
 
     }
 
-    
-
     //dark mode button
     dark.onclick = function () {
         var element = document.body;
@@ -188,27 +199,6 @@ dayNum = 5;
     }
 }
 
-//for loop to print each day
-// weatherHTML = ``;
-// for (var i = 0; i < days.length; i++) {
-
-//     weatherHTML += `${days[i]} <br/> 
-//     <img src="${days[i]}.png"></img> <br/>
-//     Temperature: ${temp[i]} <br/> 
-//     Feels Like: ${feelsLike[i]} <br/>
-//     TESTING: ${daysTEST[i]}`;
-
-//     var idName = `day-${i + 1}`;
-//     document.getElementById(idName).innerHTML = weatherHTML;
-
-//     weatherHTML = ``;
-// }
 footerHTML = `These are not my logos, visit   
          <a href='https://windy.app/support/weather-symbols-and-icons.html'>Weather Logos</a> too see all the logos available.`;
 document.getElementById("foot").innerHTML = footerHTML;
-
-
-
-
-
-
