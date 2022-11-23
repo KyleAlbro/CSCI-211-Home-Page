@@ -29,7 +29,7 @@ setDate.textContent = `${date}`;
 window.addEventListener("load", setupStyles);
 
 function setupStyles() {
-    dayNum = 5;
+    var dayNum = 3;
 
     // this is your page styles
     var pageStyle = document.createElement("link");
@@ -114,6 +114,20 @@ function setupStyles() {
     //three day button
     three.onclick = function () {
         dayNum = 3;
+        weatherHTML = ``;
+        for (var i = 0; i < 3; i++) {
+
+            weatherHTML += `${gfWeather[i]} <br/> 
+          <img src="${gfWeather[i]}.png"></img> <br/>
+          Temperature: ${gfTemp[i]} <br/> 
+          Feels Like: ${gfFeels[i]}`;
+
+            var idName = `day-${i + 1}`;
+            document.getElementById(idName).innerHTML = weatherHTML;
+
+            weatherHTML = ``;
+        }
+        location.reload();
     }
 
     //five day button
@@ -121,7 +135,7 @@ function setupStyles() {
         dayNum = 5;
     }
 
-    //great falls weater is the default
+    //great falls weather is the default
     weatherHTML = ``;
     for (var i = 0; i < dayNum; i++) {
 
@@ -158,7 +172,7 @@ function setupStyles() {
     //bozeman weather button
     bzButton.onclick = function () {
         weatherHTML = ``;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < dayNum; i++) {
 
             weatherHTML += `${bzWeather[i]} <br/> 
             <img src="${bzWeather[i]}.png"></img> <br/>
@@ -176,7 +190,7 @@ function setupStyles() {
     //butte weather button
     btButton.onclick = function () {
         weatherHTML = ``;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < dayNum; i++) {
 
             weatherHTML += `${btWeather[i]} <br/> 
             <img src="${btWeather[i]}.png"></img> <br/>
