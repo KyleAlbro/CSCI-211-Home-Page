@@ -413,11 +413,32 @@ var obj = JSON.parse(wxStr);
 // var tempF = (((tempK - 273.15) * 9.0) / 5.0) + 32.0;
 // dispStr += `Current Temperature (F) is ${tempF.toFixed(2)}</br>`;
 
+// var currentDate = obj.daily[0].dt;
+// var d = new Date(currentDate * 1000);
+// dispStr += `Current Date is ${d.toLocaleDateString()}</br>`
 
-var highK = obj.daily.temp.max;
-var highF = (((highK - 273.15) * 9.0) / 5.0) + 32.0;
-dispStr += `High Temp (F) is ${highF.toFixed(2)}`;
+// var highK = obj.daily[0].temp.max;
+// var highF = (((highK - 273.15) * 9.0) / 5.0) + 32.0;
+// dispStr += `High Temp (F) is ${highF.toFixed(2)}</br>`;
 
+// var lowK = obj.daily[0].temp.min;
+// var lowF = (((lowK - 273.15) * 9.0) / 5.0) + 32.0;
+// dispStr += `Low Temp (F) is ${lowF.toFixed(2)}`;
+
+for (var i = 0; i < obj.daily.length; i++) {
+  var currentDate = obj.daily[i].dt;
+  var d = new Date(currentDate * 1000);
+  dispStr += `Date: ${d.toLocaleDateString()}</br>`
+
+  var highK = obj.daily[i].temp.max;
+  var highF = (((highK - 273.15) * 9.0) / 5.0) + 32.0;
+  dispStr += `High Temp (F): ${highF.toFixed(2)}</br>`;
+
+  var lowK = obj.daily[i].temp.min;
+  var lowF = (((lowK - 273.15) * 9.0) / 5.0) + 32.0;
+  dispStr += `Low Temp (F): ${lowF.toFixed(2)}</br>`;
+  dispStr += `</br> `
+}
 
 document.getElementById("sandbox").innerHTML = dispStr;
 
