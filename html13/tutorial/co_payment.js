@@ -47,9 +47,9 @@
 window.addEventListener("load", function(){
    //retrieve the field/value pairs from url
    var formData = location.search.slice(1);
-   formData = formData.replace(/\+/g, " ");
+   formData = formData.replace(/\+/g," ");
    formData = decodeURIComponent(formData);
-   var formFields = formData.split(/[&]/g);
+   var formFields = formData.split(/[&=]/g);
 
    //write the field values to the order form 
    document.forms.order.elements.orderDate.value = formFields[1];
