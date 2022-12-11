@@ -375,5 +375,20 @@ let phone = "+7(903)-123-45-67";
 let quote =
   "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair";
 
+var regex = /snow/gi;
+var res = [];
+
+for (let i = 0; i < wxObj.daily.length; ++i){
+  res.unshift(wxObj.daily[i].weather[0].description.match(regex));
+}
+
+
+var opStr = '';
+for (let i = 0; i < res.length; i++){
+  opStr += `Day ${i+1} has ${res[i]?res[i]:"no snow!"} <br/>`;
+}
+
+// res = quote.match(regex);
+
 
 op.innerHTML = opStr;
