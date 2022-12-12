@@ -42,41 +42,11 @@ function setupStyles() {
     var buttonDIV = document.createElement("div");
     buttonDIV.setAttribute("id", "styleButtons");
 
-    // great falls button
-    var gfButton = document.createElement("input");
-    gfButton.setAttribute("type", "button");
-    gfButton.setAttribute("value", "Great Falls");
-
-    // butte button
-    var btButton = document.createElement("input");
-    btButton.setAttribute("type", "button");
-    btButton.setAttribute("value", "Butte");
-
-    // bozeman button
-    var bzButton = document.createElement("input");
-    bzButton.setAttribute("type", "button");
-    bzButton.setAttribute("value", "Bozeman");
-
-    // 3 days button
-    var three = document.createElement("input");
-    three.setAttribute("type", "button");
-    three.setAttribute("value", "3 Day");
-
-    // 5 days button
-    var five = document.createElement("input");
-    five.setAttribute("type", "button");
-    five.setAttribute("value", "5 Day");
-
     // dark mode
     var dark = document.createElement("input");
     dark.setAttribute("type", "button");
     dark.setAttribute("value", "Dark Mode")
 
-    buttonDIV.appendChild(gfButton);
-    buttonDIV.appendChild(btButton);
-    buttonDIV.appendChild(bzButton);
-    buttonDIV.appendChild(three);
-    buttonDIV.appendChild(five);
     buttonDIV.appendChild(dark);
 
     document.body.insertBefore(buttonDIV, document.body.firstChild);
@@ -111,100 +81,6 @@ function setupStyles() {
          }\
       }", 2);
 
-    //three day button
-    three.onclick = function () {
-        dayNum = 3;
-        weatherHTML = ``;
-        for (var i = 0; i < 3; i++) {
-
-            weatherHTML += `${gfWeather[i]} <br/> 
-          <img src="${gfWeather[i]}.png"></img> <br/>
-          Temperature: ${gfTemp[i]} <br/> 
-          Feels Like: ${gfFeels[i]}`;
-
-            var idName = `day-${i + 1}`;
-            document.getElementById(idName).innerHTML = weatherHTML;
-
-            weatherHTML = ``;
-        }
-        location.reload();
-    }
-
-    //five day button
-    five.onclick = function () {
-        dayNum = 5;
-    }
-
-    //great falls weather is the default
-    weatherHTML = ``;
-    for (var i = 0; i < dayNum; i++) {
-
-        weatherHTML += `${gfWeather[i]} <br/> 
-          <img src="${gfWeather[i]}.png"></img> <br/>
-          Temperature: ${gfTemp[i]} <br/> 
-          Feels Like: ${gfFeels[i]}`;
-
-        var idName = `day-${i + 1}`;
-        document.getElementById(idName).innerHTML = weatherHTML;
-
-        weatherHTML = ``;
-    }
-
-    //great falls weather button
-    gfButton.onclick = function () {
-        weatherHTML = ``;
-        for (var i = 0; i < dayNum; i++) {
-
-            weatherHTML += `${gfWeather[i]} <br/> 
-            <img src="${gfWeather[i]}.png"></img> <br/>
-            Temperature: ${gfTemp[i]} <br/> 
-            Feels Like: ${gfFeels[i]}`;
-
-            var idName = `day-${i + 1}`;
-            document.getElementById(idName).innerHTML = weatherHTML;
-
-            weatherHTML = ``;
-        }
-        pageStyle.disabled = false;
-
-    };
-
-    //bozeman weather button
-    bzButton.onclick = function () {
-        weatherHTML = ``;
-        for (var i = 0; i < dayNum; i++) {
-
-            weatherHTML += `${bzWeather[i]} <br/> 
-            <img src="${bzWeather[i]}.png"></img> <br/>
-            Temperature: ${bzTemp[i]} <br/> 
-            Feels Like: ${bzFeels[i]}`;
-
-            var idName = `day-${i + 1}`;
-            document.getElementById(idName).innerHTML = weatherHTML;
-
-            weatherHTML = ``;
-        }
-        pageStyle.disabled = true;
-    }
-
-    //butte weather button
-    btButton.onclick = function () {
-        weatherHTML = ``;
-        for (var i = 0; i < dayNum; i++) {
-
-            weatherHTML += `${btWeather[i]} <br/> 
-            <img src="${btWeather[i]}.png"></img> <br/>
-            Temperature: ${btTemp[i]} <br/> 
-            Feels Like: ${btFeels[i]}`;
-
-            var idName = `day-${i + 1}`;
-            document.getElementById(idName).innerHTML = weatherHTML;
-
-            weatherHTML = ``;
-        }
-        pageStyle.disabled = true;
-
-    }
 
     //dark mode button
     dark.onclick = function () {

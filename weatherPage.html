@@ -7,18 +7,42 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="weatherPage.css">
     <script src="weatherPage.js" defer></script>
-    
+
 </head>
 
 <body>
     <br>
     <br>
-
-
     <a href="/index.html" class="crumb">Return Home</a>
     <br>
     <h3 id="header"></h3>
     <h2 id="date"></h2>
+    <!-- radio buttons -->
+    <form>
+        <label>Please Select a Three or Five Day Forecast</label>
+        <br>
+        <input type="radio" name="days" id="three" value="Three Day"> Three Day <br>
+
+        <input type="radio" name="days" id="five" value="Five Day"> Five Day <br>
+
+        <button type="button" onclick="display()"> Submit </button>
+    </form>
+    <br>
+    <div id="disp" style="color:pink; font-size:18px; font-weight:bold;"></div>
+
+    <p> Select a City:
+        <select id="select1">
+            <option value="gf" string="Great Falls">Great Falls</option>
+            <option value="bt">Butte</option>
+            <option value="bz">Bozeman</option>
+        </select>
+    </p>
+
+    <p> The City You Chose Is:
+        <span class="output"></span>
+    </p>
+    <button onclick="getOption()"> Select City </button>
+    <br>
 
     <div id="day-1"></div>
     <div id="day-2"></div>
@@ -26,10 +50,124 @@
     <div id="day-4"></div>
     <div id="day-5"></div>
 
-
     <footer id="foot"> </footer>
-
-
 </body>
+
+
+<!-- radio buttons script-->
+<script>
+    dayNum = 3;
+    function display() {
+        if (document.getElementById('three').checked) {
+            dayNum = 3;
+            weatherHTML = ``;
+            for (var i = 0; i < 3; i++) {
+
+                weatherHTML += `${gfWeather[i]} 
+                <br/> 
+                <img src="${gfWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${gfTemp[i]} 
+                <br/> 
+                Feels Like: ${gfFeels[i]}`;
+
+                var idName = `day-${i + 1}`;
+                document.getElementById(idName).innerHTML = weatherHTML;
+
+                weatherHTML = ``;
+            }
+            location.reload()
+        }
+        else if (document.getElementById('five').checked) {
+            dayNum = 5;
+            weatherHTML = ``;
+            for (var i = 0; i < 5; i++) {
+
+                weatherHTML += `${gfWeather[i]} 
+                <br/> 
+                <img src="${gfWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${gfTemp[i]} 
+                <br/> 
+                Feels Like: ${gfFeels[i]}`;
+
+                var idName = `day-${i + 1}`;
+                document.getElementById(idName).innerHTML = weatherHTML;
+
+                weatherHTML = ``;
+            }
+        }
+    }
+
+    //city select
+    function getOption() {
+        selectElement = document.querySelector('#select1');
+        output = selectElement.value;
+        document.querySelector('.output').textContent = output;
+
+        if (document.querySelector('.output').textContent === "gf") {
+            weatherHTML = ``;
+            for (var i = 0; i < dayNum; i++) {
+
+                var placeholder = output;
+
+                weatherHTML += `${gfWeather[i]} 
+            <br/> 
+            <img src="${gfWeather[i]}.png"></img> 
+            <br/>
+            Temperature: ${gfTemp[i]} 
+            <br/> 
+            Feels Like: ${gfFeels[i]}`;
+
+                var idName = `day-${i + 1}`;
+                document.getElementById(idName).innerHTML = weatherHTML;
+
+                weatherHTML = ``;
+            }
+        }
+        else if(document.querySelector('.output').textContent === "bt"){
+            weatherHTML = ``;
+            for (var i = 0; i < dayNum; i++) {
+
+                var placeholder = output;
+
+                weatherHTML += `${btWeather[i]} 
+            <br/> 
+            <img src="${btWeather[i]}.png"></img> 
+            <br/>
+            Temperature: ${btTemp[i]} 
+            <br/> 
+            Feels Like: ${btFeels[i]}`;
+
+                var idName = `day-${i + 1}`;
+                document.getElementById(idName).innerHTML = weatherHTML;
+
+                weatherHTML = ``;
+            }
+        }
+        else if(document.querySelector('.output').textContent === "bz"){
+            weatherHTML = ``;
+            for (var i = 0; i < dayNum; i++) {
+
+                var placeholder = output;
+
+                weatherHTML += `${bzWeather[i]} 
+            <br/> 
+            <img src="${bzWeather[i]}.png"></img> 
+            <br/>
+            Temperature: ${bzTemp[i]} 
+            <br/> 
+            Feels Like: ${bzFeels[i]}`;
+
+                var idName = `day-${i + 1}`;
+                document.getElementById(idName).innerHTML = weatherHTML;
+
+                weatherHTML = ``;
+            }
+        }
+
+
+    }
+</script>
 
 </html>
