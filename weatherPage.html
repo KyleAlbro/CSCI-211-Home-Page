@@ -49,7 +49,7 @@
     <form class="buttonSelects">
         <label>Would You Like Farenheit or Celsius?</label>
         <br>
-        <input type="radio" name="tempLable" id="f" value="farenheit"> Farenheit <br>
+        <input type="radio" name="tempLable" id="f" value="farenheit" checked> Farenheit <br>
 
         <input type="radio" name="tempLable" id="c" value="celsius"> Celsius <br>
 
@@ -66,12 +66,123 @@
     <footer id="foot"> </footer>
 </body>
 
-
-
 <script>
     // f or c script
     function tempM() {
+        if (document.querySelector('.output').textContent === "gf") {
+            if (document.getElementById('c').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
 
+                    weatherHTML += `${gfWeather[i]} 
+                <br/> 
+                <img src="${gfWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${Math.round((gfTemp[i] - 32) * 0.5556)} 
+                <br/> 
+                Feels Like: ${Math.round((gfFeels[i] - 32) * 0.5556)}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+            else if (document.getElementById('f').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
+
+                    weatherHTML += `${gfWeather[i]} 
+                <br/> 
+                <img src="${gfWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${gfTemp[i]} 
+                <br/> 
+                Feels Like: ${gfFeels[i]}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+        }
+        else if (document.querySelector('.output').textContent === "bt") {
+            if (document.getElementById('c').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
+
+                    weatherHTML += `${btWeather[i]} 
+                <br/> 
+                <img src="${btWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${Math.round((btTemp[i] - 32) * 0.5556)} 
+                <br/> 
+                Feels Like: ${Math.round((btFeels[i] - 32) * 0.5556)}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+            else if (document.getElementById('f').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
+
+                    weatherHTML += `${btWeather[i]} 
+                <br/> 
+                <img src="${btWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${btTemp[i]} 
+                <br/> 
+                Feels Like: ${btFeels[i]}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+        }
+        else if (document.querySelector('.output').textContent === "bz") {
+            if (document.getElementById('c').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
+
+                    weatherHTML += `${btWeather[i]} 
+                <br/> 
+                <img src="${bzWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${Math.round((bzTemp[i] - 32) * 0.5556)} 
+                <br/> 
+                Feels Like: ${Math.round((bzFeels[i] - 32) * 0.5556)}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+            else if (document.getElementById('f').checked) {
+                weatherHTML = ``;
+                for (var i = 0; i < dayNum; i++) {
+
+                    weatherHTML += `${btWeather[i]} 
+                <br/> 
+                <img src="${bzWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${bzTemp[i]} 
+                <br/> 
+                Feels Like: ${bzFeels[i]}`;
+
+                    var idName = `day-${i + 1}`;
+                    document.getElementById(idName).innerHTML = weatherHTML;
+
+                    weatherHTML = ``;
+                }
+            }
+        }
     }
 
 

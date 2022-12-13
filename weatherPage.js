@@ -10,9 +10,9 @@ var bzWeather = ["Sunny", "Sunny", "Rain", "Rain", "Snow"];
 var btWeather = ["Snow", "Rain", "Snow", "Snow", "Snow"];
 
 //different city feels
-var gfFeels = ["65-70", "32-41", "9", "31-33", "42-44"];
-var bzFeels = ["55-73", "41-53", "34-36", "35-38", "29-31"];
-var btFeels = ["20-25", "30-36", "0", "12-15", "14"];
+var gfFeels = ["65", "32", "9", "31", "42"];
+var bzFeels = ["55", "41", "34", "35", "29"];
+var btFeels = ["20", "30", "0", "12", "14"];
 
 //different city temps
 var gfTemp = ["60", "40", "20", "34", "45"];
