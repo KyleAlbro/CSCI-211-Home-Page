@@ -1,6 +1,5 @@
 //default values
 var title = "Weather For This Week";
-var date = "October 31st, 2022"
 var days = ["Sunny", "Rain", "Snow"];
 var feelsLike = ["65-70", "32-41", "9", "31-33", "42-44"];
 var temp = ["60", "40", "20", "34", "45"];

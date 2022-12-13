@@ -14,11 +14,9 @@
     <br>
     <br>
     <a href="/index.html" class="crumb">Return Home</a>
-    <br>
     <h3 id="header"></h3>
-    <h2 id="date"></h2>
-    <!-- radio buttons -->
-    <form>
+    <!-- radio buttons for three or five day -->
+    <form class="buttonSelects">
         <label>Please Select a Three or Five Day Forecast</label>
         <br>
         <input type="radio" name="days" id="three" value="Three Day"> Three Day <br>
@@ -26,22 +24,36 @@
         <input type="radio" name="days" id="five" value="Five Day"> Five Day <br>
 
         <button type="button" onclick="display()"> Submit </button>
+        <div id="disp" style="color:pink; font-size:18px; font-weight:bold;"></div>
     </form>
-    <br>
-    <div id="disp" style="color:pink; font-size:18px; font-weight:bold;"></div>
 
-    <p> Select a City:
+    <form class="buttonSelects">
+        <label>Select a City:</label>
         <select id="select1">
-            <option value="gf" string="Great Falls">Great Falls</option>
+            <option value="gf" selected>Great Falls</option>
             <option value="bt">Butte</option>
             <option value="bz">Bozeman</option>
         </select>
-    </p>
+        
+    </form>
 
-    <p> The City You Chose Is:
+    <!-- city select -->
+    <button onclick="getOption()"> Select City </button>
+    <p class="buttonSelects"> The City You Chose Is:
         <span class="output"></span>
     </p>
-    <button onclick="getOption()"> Select City </button>
+    
+
+    <!-- radio button for f or c -->
+    <form class="buttonSelects">
+        <label>Would You Like Farenheit or Celsius?</label>
+        <br>
+        <input type="radio" name="tempLable" id="f" value="farenheit"> Farenheit <br>
+
+        <input type="radio" name="tempLable" id="c" value="celsius"> Celsius <br>
+
+        <button type="button" onclick="tempM()"> Submit </button>
+    </form>
     <br>
 
     <div id="day-1"></div>
@@ -54,8 +66,15 @@
 </body>
 
 
-<!-- radio buttons script-->
+
 <script>
+    // f or c script
+    function tempM() {
+
+    }
+
+
+    // radio buttons script
     dayNum = 3;
     function display() {
         if (document.getElementById('three').checked) {
@@ -112,12 +131,12 @@
                 var placeholder = output;
 
                 weatherHTML += `${gfWeather[i]} 
-            <br/> 
-            <img src="${gfWeather[i]}.png"></img> 
-            <br/>
-            Temperature: ${gfTemp[i]} 
-            <br/> 
-            Feels Like: ${gfFeels[i]}`;
+                <br/> 
+                <img src="${gfWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${gfTemp[i]} 
+                <br/> 
+                Feels Like: ${gfFeels[i]}`;
 
                 var idName = `day-${i + 1}`;
                 document.getElementById(idName).innerHTML = weatherHTML;
@@ -125,19 +144,19 @@
                 weatherHTML = ``;
             }
         }
-        else if(document.querySelector('.output').textContent === "bt"){
+        else if (document.querySelector('.output').textContent === "bt") {
             weatherHTML = ``;
             for (var i = 0; i < dayNum; i++) {
 
                 var placeholder = output;
 
                 weatherHTML += `${btWeather[i]} 
-            <br/> 
-            <img src="${btWeather[i]}.png"></img> 
-            <br/>
-            Temperature: ${btTemp[i]} 
-            <br/> 
-            Feels Like: ${btFeels[i]}`;
+                <br/> 
+                <img src="${btWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${btTemp[i]} 
+                <br/> 
+                Feels Like: ${btFeels[i]}`;
 
                 var idName = `day-${i + 1}`;
                 document.getElementById(idName).innerHTML = weatherHTML;
@@ -145,19 +164,19 @@
                 weatherHTML = ``;
             }
         }
-        else if(document.querySelector('.output').textContent === "bz"){
+        else if (document.querySelector('.output').textContent === "bz") {
             weatherHTML = ``;
             for (var i = 0; i < dayNum; i++) {
 
                 var placeholder = output;
 
                 weatherHTML += `${bzWeather[i]} 
-            <br/> 
-            <img src="${bzWeather[i]}.png"></img> 
-            <br/>
-            Temperature: ${bzTemp[i]} 
-            <br/> 
-            Feels Like: ${bzFeels[i]}`;
+                <br/> 
+                <img src="${bzWeather[i]}.png"></img> 
+                <br/>
+                Temperature: ${bzTemp[i]} 
+                <br/> 
+                Feels Like: ${bzFeels[i]}`;
 
                 var idName = `day-${i + 1}`;
                 document.getElementById(idName).innerHTML = weatherHTML;
